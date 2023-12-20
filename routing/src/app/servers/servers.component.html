@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allwedEdit: '1'}"
+        fragment="adding"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <!-- <app-edit-server></app-edit-server>
+    <hr> -->
+    <!-- 注意这里要把去single server的template selector注释掉，否则加载servers页面时会同时加载单个server页面，此时还没有参数传给单个server页面 -->
+    <!-- <app-server></app-server> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
